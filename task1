@@ -1,0 +1,45 @@
+
+import java.util.Random;
+import java.util.Scanner;
+
+
+public class Task1 
+{
+	Scanner sc=new Scanner(System.in);
+	Random random = new Random();
+    int min = 1;
+    int max = 100;
+    int randomNumber = random.nextInt(max - min + 1) + min;
+    
+    void meth1()
+    {
+    	System.out.println("enter your guess :   ");
+    	
+    	for(int i=1;i<=5;i++) 
+    	{ 		  	 	
+    	int guess=sc.nextInt();
+    	if(guess==randomNumber) 
+    	  {
+    		System.out.println("C O N G R A T U L A T I O N   YOUR GUESS IS CORRECT !");
+    		break;
+    	  }
+    	else if(guess>randomNumber) 
+    	  {    		    	  
+    		System.out.println("YOUR GUESS IS TOO HIGH ");
+    		System.out.println("please try again , you have only "+(5-i)+"rounde");
+    	  }
+    	else if(guess<randomNumber)
+    	  {
+    		System.out.println("YOUR GUESS IS TOO LOW");
+    		System.out.println("please try again , you have only "+(5-i)+"rounde");
+
+    	  }    		
+       }   	  	
+    }
+    public static void main(String[] args)
+    {
+    	Task1 t1=new Task1();
+    	t1.meth1();
+		
+	}
+}
